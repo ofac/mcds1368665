@@ -1,0 +1,30 @@
+doctype
+html(lang="es")
+	head
+		meta(charset="utf-8")
+		title Atributos de Etiquetas
+	body
+		h1 Atributos de Etiquetas
+		hr
+		//- Atributos en Linea
+		a(class="link" href="http://www.google.com" target="_blank") Ir a Google
+		| &nbsp; | &nbsp;
+		//- Atributos en Bloque
+		a(
+			class="link active"
+			href="http://www.yahoo.com"
+			target="_blank"
+		) Ir a Yahoo
+		br
+		hr
+		br
+		//- Atributos Booleanos
+		label
+			input(type="radio" name="color" checked=false)
+			| Amarillo
+		label
+			input(type="radio" name="color" checked=true)
+			| Azul
+		label
+			input(type="radio" name="color" checked=false)
+			| Rojo
