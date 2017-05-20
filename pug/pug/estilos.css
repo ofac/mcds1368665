@@ -1,0 +1,11 @@
+body {
+	background-color: crimson;
+	color: white;
+	font: 16px Arial;
+}
+h1, h2 {
+	text-align: center;
+}
+h2 {
+	font-size: 3em;
+}

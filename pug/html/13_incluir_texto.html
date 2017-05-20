@@ -1,0 +1,29 @@
+
+<octype></octype>
+<html lang="es">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Incluir Texto</title>
+    <style>body {
+	background-color: crimson;
+	color: white;
+	font: 16px Arial;
+}
+h1, h2 {
+	text-align: center;
+}
+h2 {
+	font-size: 3em;
+}
+    </style>
+  </head>
+  <body>
+    <h1>Incluir Texto</h1>
+    <hr/>
+    <h2 id="nombre"></h2>
+    <script>var nombre    = document.getElementById('nombre');
+var visitante = prompt('Cuál es su nombre ?');
+nombre.innerHTML = "Bienvenido: "+visitante;
+    </script>
+  </body>
+</html>

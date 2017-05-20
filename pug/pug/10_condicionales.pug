@@ -1,0 +1,18 @@
+doctype
+html(lang="es")
+	head
+		meta(charset="utf-8")
+		title Condicional
+	body
+		h1 Condicional
+		hr
+		-var edad = 27
+		-var persona = {alto: 180, peso: 70, genero: 'femenino'}
+		article
+			if(edad >= 18)
+				h2 Usted puede votar
+				p='Genero: '+persona.genero
+				p='Peso: '+persona.peso+' kgs'
+				p='Estatura: '+persona.alto+' cms'
+			else
+				h2 Usted no puede votar
