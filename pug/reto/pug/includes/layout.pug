@@ -1,0 +1,36 @@
+doctype
+html(lang="en")
+	head
+		block header
+			meta(charset="utf-8")
+			meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no")
+			meta(name="description" content="")
+			meta(name="author" content="")
+			title Vitality
+			// Bootstrap Core CSS
+			link(href="css/bootstrap.css" rel="stylesheet" type="text/css")
+			// Font Awesome
+			link(href="css/font-awesome.css" rel="stylesheet" type="text/css")
+			//Vitality Theme CSS
+			link(href="css/vitality-red.css" rel="stylesheet" type="text/css")
+	body
+		block top
+			div.demo-header
+				div.demo-header-content
+					div.container
+						h1 Welcome to Vitality!
+						hr.colored
+						p All of the sample layouts are included with your download. Select an example layout below to preview!
+						ul.list-inline.cta-list
+							li.list-inline-item
+								a(href="#previews" class="btn btn-primary page-scroll-demo") View Demos
+							li.list-inline-item
+								a(href="docs/index.html" class="btn btn-primary page-scroll-demo") Documentation
+
+		block scripts
+			// Core Scripts
+			script(src="js/jquery.js")
+			script(src="js/bootstrap.js")
+			// Vitality Theme Scripts
+			script(src="js/vitality.js")
+		

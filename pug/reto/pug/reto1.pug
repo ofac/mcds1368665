@@ -1,0 +1,42 @@
+doctype
+html(lang="es")
+	head
+		meta(charset="utf-8")
+		title Reto 1 (Tabla)
+		style.
+			table {
+				border: 1px solid gray;
+				border-collapse: collapse;
+			}
+			table td {
+				border: 1px solid gray;
+				padding: 25px;
+			}
+			table td.color {
+				background-color: #ddd;
+			}
+	body
+		h1 Reto 1 (Tabla)
+		hr
+		table
+			- var nf = 1
+			- var nc = 2
+			- var cc = 9
+			mixin ccolor(n)
+				- for(i=1; i<=n; i++)
+					td.color
+			- for(var f=1; f<=10; f++)
+				tr
+					- for(var c=1; c<=12; c++)
+						if(f == 1 && c == 11 || f==1 && c == 12)
+							td.color(rowspan=10)
+						else
+							if(c < 11)
+								if(f== nf && c == nc)
+									if(cc == 1)
+										+ccolor(nf)
+									else
+										+ccolor(nf)
+										td(colspan=cc--)
+									- nf++
+									- nc++

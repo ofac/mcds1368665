@@ -1,0 +1,41 @@
+extends includes/layout.pug
+
+block header
+
+append top
+	mixin preview(img, title, op1, op2, op3)
+		div.col-md-4
+			div.preview-pane
+				a(href="agency.html")
+					img(src=""+img+"" class="img-fluid mx-auto mb-4" alt="")
+					h3=title
+					hr.colored
+					if(title != 'Video')
+						p.text-muted Ideal For:
+						ul.ist-unstyled.text-muted
+							li
+								em=op1
+							li
+								em=op2
+							li
+								em=op3
+					else
+						p.text-muted
+							em An example of the agency theme with a video background for the header. A video background can be applied to any other theme!
+
+	div.container#previews
+		div.row
+			+preview("img/demo/screenshot1.png", "Agency", "Agencies", "Businesses", "Consultants")
+
+			+preview("img/demo/screenshot2.png", "Creative", "Personal Portfolios", "Freelancers", "Photographers")
+
+			+preview("img/demo/screenshot3.png", "Culinary", "Restaurants", "Bakeries", "Caterers")
+
+			+preview("img/demo/screenshot4.png", "Fashion", "Boutiques", "Designers", "Retail Stores")
+
+			+preview("img/demo/screenshot5.png", "Legal", "Lawyers", "Law Firms", "Consultants")
+
+			+preview("img/demo/screenshot6.png", "Video", "", "", "")
+block scripts
+
+

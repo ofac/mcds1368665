@@ -1,0 +1,123 @@
+doctype
+html(lang="es")
+	head
+		meta(charset="utf-8")
+		title Formularios (PUG - BOOTSTRAP)
+		link(href="css/bootstrap.css" rel="stylesheet")
+	body
+		main.container
+			//- - - - - - - - - - - - - - - - -
+			//- F O R M U L A R I O   L O G I N
+			section.row
+				div.col-md-4.col-md-offset-4
+					fieldset
+						legend 
+							h3.text-muted 
+								i.glyphicon.glyphicon-user
+								| &nbsp; Formulario de Login 
+						form(method="post")
+							div.form-group
+								input.form-control(
+									name="email"
+									type="email"
+									placeholder="Correo Electrónico"
+									required=true
+								)
+							div.form-group
+								input.form-control(
+									name="password"
+									type="password"
+									placeholder="Contraseña"
+									required=true
+								)
+							div.form-group
+								input.form-control.btn.btn-info(
+									type="submit"
+									value="Iniciar Sesión"
+								)
+			//- - - - - - - - - - - - - - - - - - - -
+			//- F O R M U L A R I O   R E G I S T R O
+			br
+			br
+			section.row
+				div.col-md-4.col-md-offset-4
+					fieldset
+						legend
+							h3.text-muted 
+								i.glyphicon.glyphicon-list
+								| &nbsp; Formulario de Registro
+						form(method="post")
+							div.form-group
+								input.form-control(
+									type="text"
+									name="name"
+									placeholder="Nombre Completo"
+									required=true
+								)
+							div.form-group
+								select.form-control(name="gender" required=true)
+									option Seleccione Genero...
+									option(value="F") Femenino
+									option(value="M") Masculino
+							div.form-group
+								input.form-control(
+									type="date"
+									name="date"
+									placeholder="Fecha Nacimiento"
+									required=true
+								)
+							div.form-group
+								small Deportes Favoritos 
+								br
+								label(for="s1")
+									input(
+										type="checkbox"
+										name="sport"
+										id="s1"
+										value="Soccer"
+									) 
+									| &nbsp; Fútbol
+								br
+								label(for="s2")
+									input(
+										type="checkbox"
+										name="sport"
+										id="s2"
+										value="Basket"
+									) 
+									| &nbsp; Baloncesto
+								br
+								label(for="s3")
+									input(
+										type="checkbox"
+										name="sport"
+										id="s3"
+										value="Baseball"
+									) 
+									| &nbsp; Béisbol
+								br
+								label(for="s4")
+									input(
+										type="checkbox"
+										name="sport"
+										id="s4"
+										value="Tennis"
+									) 
+									| &nbsp; Tenis
+							div.form-group
+								textarea.form-control(
+									name="description"
+									placeholder="Descripción"
+									rows="6"
+									required=true
+								)
+							div.form-group
+								input.form-control.btn.btn-info(
+									type="submit"
+									value="Registrar Datos"
+								)
+							div.form-group
+								input.form-control.btn.btn-default(
+									type="reset"
+									value="Limpiar Datos"
+								)

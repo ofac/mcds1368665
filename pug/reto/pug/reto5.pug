@@ -1,0 +1,16 @@
+doctype
+html(lang="es")
+	head
+		meta(charset="utf-8")
+		title Reto 5 (Ciclos - Condicionales)
+	body
+		h1 Reto 4 (Ciclos - Condicionales)
+		hr
+		select(multiple=true size=10)
+			- for(var i = 1; i<= 30; i++)
+				if(i % 3 == 0)
+					option(style="background-color: yellow") Opcion #{i}
+				if(i % 4 == 0)
+					option(style="background-color: blue") Opcion #{i}
+				if(i % 5 == 0)
+					option(style="background-color: red") Opcion #{i}

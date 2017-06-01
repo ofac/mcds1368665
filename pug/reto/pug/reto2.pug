@@ -1,0 +1,28 @@
+doctype
+html(lang="es")
+	head
+		meta(charset="utf-8")
+		title Reto 2 (Colores)
+		style.
+			ul {
+				margin: 40px auto;
+				list-style: none;
+				width: 400px;
+			}
+			ul li {
+				border: 1px solid #fff;
+				padding: 20px;
+			}
+	body
+		h1 Reto 2 (Colores)
+		hr
+		ul
+			- var i = 1
+			- var r = 250
+			- var g = 250
+			- var b = 250
+			while i <= 10
+				li(style="background-color: rgb("+r+","+g+","+b+")")
+				- i++
+				- r-=25
+				- g-=25
