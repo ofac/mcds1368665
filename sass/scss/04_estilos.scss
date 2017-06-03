@@ -1,0 +1,34 @@
+body {
+	font-size: 16px;
+	font-family: Verdana;
+}
+menu {
+	background-color: #006a6a;
+	padding: 10px;
+	margin: 20px auto;
+	width: 200px;
+	ul {
+		list-style: none;
+		padding: 0px;
+		margin: 0px;
+		li {
+			background-color: #005454;
+			color: #84fdfe;
+			padding: 10px;
+			margin-bottom: 4px;
+			transition: all 0.5s;
+			&:hover {
+				background-color: #00a9a9;
+				color: #fff;
+				cursor: pointer;
+				transform: translate(8px);
+			}
+			&:first-child:hover {
+				background-color: crimson;
+			}
+			&:last-child:hover {
+				cursor: help; 
+			}
+		}
+	}
+}
