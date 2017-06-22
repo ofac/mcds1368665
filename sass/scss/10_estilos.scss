@@ -1,0 +1,24 @@
+body {
+	font: 16px Tahoma;
+	color: #444;
+}
+
+@mixin box-radius($val) {
+	border-radius: $val;
+}
+
+section {
+	border: 1px solid #aaa;
+	padding: 40px;
+	margin: 10px;
+	width: 200px;
+	&.box1 {
+		@include box-radius(10px);
+	}
+	&.box2 {
+		@include box-radius(100%);
+	}
+	&.box3 {
+		@include box-radius(60px);
+	}
+}

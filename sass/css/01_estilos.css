@@ -3,15 +3,12 @@ body {
   color: white;
   font: 16px Arial;
 }
-
 body h1 {
   text-align: center;
 }
-
 body hr {
   border: 1px solid white;
 }
-
 body section.box {
   background-color: #7f0c25;
   padding: 40px;
@@ -20,10 +17,7 @@ body section.box {
   width: 200px;
   transition: all 0.5s;
 }
-
 body section.box:hover {
   opacity: 1;
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
   transform: scale(1.2);
 }
