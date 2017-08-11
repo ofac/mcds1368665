@@ -6,6 +6,10 @@
 
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
+		<br>
+		<a href="{{ url('departments') }}" class="btn btn-default"> 
+			<i class="fa fa-list"></i> Ejemplo de Lista Desplegable 
+		</a>
 			<h1 class="lead"> Lista de Usuarios </h1>
 			@if(session('status'))
 				<div class="alert alert-success">
@@ -22,7 +26,6 @@
 			<br><br>
 			<strong>Número de Usuarios:</strong>
 			<span class="badge"> {{ $users->count() }}</span>
-
 			<table class="table table-striped table-hover">
 				<thead>
 					<tr>

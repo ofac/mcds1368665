@@ -43,7 +43,17 @@
 					}
 				});
 			});
+			// - - - - - - - - - - - - - - - - - - - - - - - - - -
+			$('form').on('change', '#departments', function(event) {
+				event.preventDefault();
+				$id_dep = $(this).val();
+				$token = $('input[name="_token"]').val();
 
+				$.post('loadmuns', {id_dep: $id_dep, _token: $token}, function(data) {
+					$('#municipalities').removeAttr('readonly');
+					$('#municipalities').html(data);
+				});
+			});
 
 		});
 		new Vue({
