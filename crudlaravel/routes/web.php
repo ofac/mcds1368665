@@ -14,4 +14,6 @@
 Route::get('/', 'UserController@index');
 Route::resource('user', 'UserController');
 
+Route::post('user/checkmail', 'UserController@checkmail');
+
 

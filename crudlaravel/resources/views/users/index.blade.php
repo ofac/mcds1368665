@@ -7,8 +7,22 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<h1 class="lead"> Lista de Usuarios </h1>
+			@if(session('status'))
+				<div class="alert alert-success">
+					<ul>
+						<li> {!! session('status') !!} </li>
+					</ul>
+				</div>
+			@endif
 			<hr>
-			<a class="btn btn-success" href="{{ url('user/create') }}"> Adicionar Usuario</a>
+			<a class="btn btn-success" href="{{ url('user/create') }}"> 
+				<i class="fa fa-plus"></i>
+			 	Adicionar Usuario
+			</a>
+			<br><br>
+			<strong>Número de Usuarios:</strong>
+			<span class="badge"> {{ $users->count() }}</span>
+
 			<table class="table table-striped table-hover">
 				<thead>
 					<tr>
@@ -25,9 +39,19 @@
 						<td> {{ $user->email }}</td>
 						<td> {{ $user->role }}</td>
 						<td>
-							<a class="btn btn-info" href="{{ url('user/'.$user->id) }}"> C </a>
-							<a class="btn btn-info" href="{{ url('user/'.$user->id.'/edit') }}"> M </a>
-							<a class="btn btn-danger" href=""> E </a>
+							<a class="btn btn-info" href="{{ url('user/'.$user->id) }}"> 
+								<i class="fa fa-search"></i> 
+							</a>
+							<a class="btn btn-info" href="{{ url('user/'.$user->id.'/edit') }}"> 
+							 	<i class="fa fa-pencil"></i>
+							</a>
+							<form action="{{ url('user/'.$user->id) }}" method="POST" style="display: inline">
+							{{ csrf_field() }}
+							{{ method_field('DELETE') }}
+								<button type="button" class="btn btn-danger btn-delete"> 
+									<i class="fa fa-trash"></i> 
+								</button>
+							</form>
 						</td>
 					</tr>
 				@endforeach
