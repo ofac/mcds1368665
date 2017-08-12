@@ -16,6 +16,7 @@
 					</select>
 				</div>
 				<div class="form-group">
+					<img src="{{ asset('imgs/loading.gif') }}" id="loading">
 					<select name="municipalities" id="municipalities" class="form-control" readonly>
 						<option value="">Seleccione Municipio...</option>
 					</select>

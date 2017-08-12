@@ -14,6 +14,7 @@
 	<script src="{{ asset('js/app.js') }}"></script>
 	<script>
 		$(document).ready(function() {
+			$('#loading').hide();
 			/*$('#doUpload').click(function(event) {
 				$('#upload').click();
 			});*/
@@ -49,9 +50,17 @@
 				$id_dep = $(this).val();
 				$token = $('input[name="_token"]').val();
 
+				$('#loading').show();
+				$('#municipalities').hide();
+
 				$.post('loadmuns', {id_dep: $id_dep, _token: $token}, function(data) {
-					$('#municipalities').removeAttr('readonly');
-					$('#municipalities').html(data);
+					setTimeout(function() {
+						$('#municipalities').removeAttr('readonly');
+						$('#municipalities').html(data);
+						$('#municipalities').show();
+						$('#loading').hide();
+					}, 1200);
+					
 				});
 			});
 
