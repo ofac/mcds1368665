@@ -17,7 +17,7 @@ class UserTableSeeder extends Seeder
         $usr->email = 'jeremias@gmail.com';
         $usr->password = bcrypt('admin');
         $usr->role = 'Admin';
-        $usr->photo = 'imgs/photos/jeremias.png';
+        $usr->photo = 'photos/jeremias.png';
         $usr->save();
 
         User::create(array(
@@ -25,7 +25,9 @@ class UserTableSeeder extends Seeder
         	'email'    => 'homero@gmail.com',
         	'password' => bcrypt('customer'),
         	'role'     => 'Customer',
-        	'photo'    => 'imgs/photos/homero.png',
+        	'photo'    => 'photos/homero.png',
         ));
+        // Se crean 50 Usuarios con Factory
+        factory(User::class, 50)->create();
     }
 }
