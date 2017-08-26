@@ -23,6 +23,7 @@
 				<i class="fa fa-plus"></i>
 			 	Adicionar Usuario
 			</a>
+			<a class="btn btn-default" href="{{ url('pdf') }}"> Generar PDF </a>
 			<br><br>
 			<strong>Número de Usuarios:</strong>
 			<span class="badge"> {{ $users->count() }}</span>
@@ -59,6 +60,13 @@
 					</tr>
 				@endforeach
 				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="4" class="text-center">
+							{!! $users->render() !!}
+						</td>
+					</tr>
+				</tfoot>
 			</table>
 		</div>
 	</div>

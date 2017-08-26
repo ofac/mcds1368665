@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'UserController@index');
+Route::get('/', 'HomeController@index');
 Route::resource('user', 'UserController');
 Route::post('user/checkmail', 'UserController@checkmail');
 
@@ -20,3 +20,5 @@ Route::post('loadmuns', 'DepartmentController@loadmuns');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('pdf', 'UserController@pdf');

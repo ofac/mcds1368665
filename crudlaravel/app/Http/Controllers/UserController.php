@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Requests\UserRequest;
+use Auth;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class UserController extends Controller
 {
@@ -20,10 +22,17 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        if(Auth::user()->role != "Admin") {
+            return redirect('home');
+        }
+
+        //$users = User::all();
         //dd($users);
         //var_dump($users);
-        return view('users.index')->with('users', $users);
+        //return view('users.index')->with('users', $users);
+
+        return view('users.index')
+                ->with('users', User::paginate(30)->setPath('user'));
     }
 
     /**
@@ -133,4 +142,11 @@ class UserController extends Controller
             echo 'ok';
         }
     }
+
+    public function pdf() {
+        $users = User::all();
+        $pdf = PDF::loadView('users.pdf', compact('users'));
+        return $pdf->download('users.pdf');
+    }
+
 }
